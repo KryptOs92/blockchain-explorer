@@ -1,12 +1,16 @@
-import logo from './logo.svg';
+import Navbar from "./view/organisms/navbar/Navbar"
 import React from 'react';
 import './App.css';
-
+import AppRouter from './view/organisms/appRouter/AppRouter'
+import {BrowserRouter} from "react-router-dom"
 function App() {
   return (
-    <div className="App">
-      TEST APP
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <AppRouter />
+      </div>
+   </BrowserRouter>
   );
 }
 

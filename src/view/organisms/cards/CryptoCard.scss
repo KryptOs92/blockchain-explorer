@@ -1,0 +1,51 @@
+.crypto-card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    .MuiPaper-root{
+        height: calc(100% - 1px);
+    }
+    .MuiCardContent-root{
+        padding: unset!important;
+        text-align: center;
+    }
+    .MuiCardActions-root{
+        justify-content: center;
+    }
+
+    .MuiCardMedia-root-custom{
+        height: 60px;
+        cursor: pointer;
+        background-size: auto!important;
+    }
+ 
+}
+
+.crypto-card:hover{
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    .MuiCardMedia-root-custom {
+        animation: rotation 2s infinite;
+     }  
+    
+     @keyframes rotation {
+         from {
+             transform: rotateY(0deg);
+             -webkit-transform: rotateY(0deg);
+         }
+         to {
+             transform: rotateY(359deg);
+             -webkit-transform: rotateY(179deg);
+         }
+       }
+}
+
+
+   
