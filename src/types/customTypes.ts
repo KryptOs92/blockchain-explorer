@@ -12,3 +12,4 @@ export type gridConfigurationType = {
     rowHeight: number
 }
 export type gridElementsType = {i: string, dom: JSX.Element}
+export enum PagesId {CRYPTO_LIST= "cryptoListPage", ETHEREUM_DETAIL = "ethereumDetailPage"}

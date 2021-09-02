@@ -4,12 +4,12 @@ import CardanoCard from '../../organisms/cards/cardano/CardanoCard'
 import EthereumCard from '../../organisms/cards/ethereum/EthereumCard'
 import '../../../css/GeneralGrid.scss'
 import React from 'react';
-import {gridConfigurationType, gridElementsType} from '../../../types/customTypes'
+import {gridConfigurationType, gridElementsType,PagesId} from '../../../types/customTypes'
 const ResponsiveGridLayout = WidthProvider(Responsive);
 export default function CryptoListPage() {
     
     const gridComponents :gridElementsType[] = [{i: "cardano", dom: <CardanoCard />},{i: "ethereum", dom: <EthereumCard />}]
-    const gridConfiguration : gridConfigurationType = getGridConfiguration("cryptoListPage")
+    const gridConfiguration : gridConfigurationType = getGridConfiguration(PagesId.CRYPTO_LIST)
     const renderGridElements = (gridComponents : gridElementsType[]) => {
         let elements :  JSX.Element[]= []
         // eslint-disable-next-line array-callback-return

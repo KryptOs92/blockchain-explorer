@@ -1,7 +1,14 @@
 import React,{ useState, useEffect }  from "react";
-
+import connect from "react-redux"
 type GreetProps = { x1?: number };
+const mapStateToProps = (state: any, ownProps: any) => ({
+  // ... computed data from state and optionally ownProps
+  
+})
 
+const mapDispatchToProps = {
+  
+}
 
 const GenericComponent = ({ x1 = 21 }: GreetProps) => {
 
@@ -40,4 +47,4 @@ const GenericComponent = ({ x1 = 21 }: GreetProps) => {
     );
 }
 
-export default GenericComponent
+export default connect(mapStateToProps, mapDispatchToProps)GenericComponent

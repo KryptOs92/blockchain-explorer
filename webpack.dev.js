@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const webpack = require('webpack')
 module.exports = {
     mode: "development",
   output: {
@@ -11,12 +11,25 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
     }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+      Buffer: ['buffer', 'Buffer']
+    }),
+    
   ],
   entry: {
     entry: path.join(__dirname, "src", "index.js"),
   },
   resolve: {
-    extensions: ['.ts','.tsx', '...']
+    extensions: ['.ts','.tsx', '...'],
+    fallback: {
+      os: false,
+      stream: false,
+      crypto: false,
+      https: require.resolve("https-browserify"),
+      http: require.resolve('stream-http'),
+      "crypto-browserify": require.resolve('crypto-browserify'), //if you want to use this module also don't forget npm i crypto-browserify 
+    } 
 },
   module: {
     rules: [
