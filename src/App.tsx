@@ -21,7 +21,6 @@ function App() {
   const store = useStore()
   const dispatch = useDispatch()
   useEffect(() => {  
-    
     console.log("STATE DEFUX 000: ",store.getState())
     if(store && !store.ethWeb3 && connectWeb3){
       dispatch(connectWeb3("https://mainnet.infura.io/v3/be47a51c255e46649a33f7f945cda99b"))
