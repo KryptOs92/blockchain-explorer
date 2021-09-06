@@ -7,8 +7,12 @@ const EthBlockInspector = () => {
 
   const web3 = useSelector((state:storeType) => state.ethWeb3)
 
-
-    
+    const inspectBlocks = web3.eth.getBlockNumber().then((latest) => {
+        for(let i = 0; i < 10; i++){
+            web3.eth.getBlock(latest - i ).then(console.log)
+        }
+    })
+    inspectBlocks()
 
 
     return (
